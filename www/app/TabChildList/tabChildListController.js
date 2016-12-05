@@ -19,7 +19,7 @@ angular.module('starter.controllers')
 	});
 	
 	function _gotoChild(item) {
-		$state.go('app.child');
+		$state.go('app.gchild');
 	}
 });
 })();

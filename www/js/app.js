@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers'])
+angular.module('starter', ['ionic', 'starter.common', 'starter.routes', 'starter.controllers'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -32,57 +32,6 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     controller: 'AppCtrl'
   })
 
-  .state('app.item', {
-    url: '/item',
-    views: {
-      'menuContent': {
-        templateUrl: 'app/Item/itemView.html',
-	  	controller: 'ItemCtrl'
-      }
-    }
-  })
-
-  .state('app.list', {
-    url: '/list',
-    views: {
-      'menuContent': {
-        templateUrl: 'app/List/listView.html',
-	  	controller: 'ListCtrl'
-      }
-    }
-  })
-
-  .state('app.tabbed', {
-      url: '/tabbed',
-	  abstract: true,
-      views: {
-        'menuContent': {
-          templateUrl: 'app/TabbedItem/tabbedItemView.html',
-          controller: 'TabbedItemCtrl'
-        }
-      }
-  })
-
-  .state('app.tabbed.item', {
-    url: '/item',
-    views: {
-      'tab-item': {
-        templateUrl: 'app/TabChildItem/tabChildItemView.html',
-        controller: 'TabChildItemCtrl'
-      }
-    }
-  })
-
-  .state('app.tabbed.list', {
-    url: '/list',
-    views: {
-      'tab-list': {
-        templateUrl: 'app/TabChildList/tabChildListView.html',
-        controller: 'TabChildListCtrl'
-      }
-    }
-  })
-
   .state('app.child', {
 	  url: '/child',
 	  views: {
@@ -92,45 +41,16 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 		  }
 	  }
   })
-
-//  .state('app.tabbed.tabs', {
-//    url: '/tab3',
-//    views: {
-//      'tab-tabs': {
-//        templateUrl: 'templates/tab3.html',
-//        controller: 'TabThreeCtrl'
-//      }
-//    }
-//  })
-		 
-  .state('app.search', {
-    url: '/search',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/search.html',
-	  	controller: 'SearchCtrl'
-      }
-    }
-  })
-
-  .state('app.browse', {
-      url: '/browse',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/browse.html',
-		  controller: 'BrowseCtrl'
-        }
-      }
-    })
-    .state('app.playlists', {
-      url: '/playlists',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/playlists.html',
-          controller: 'PlaylistsCtrl'
-        }
-      }
-    });
+  
+  .state('app.gchild', {
+	  url: '/gchild',
+	  views: {
+		  'menuContent': {
+			  templateUrl: 'app/GChild/gchildView.html',
+			  controller: 'GChildCtrl'
+		  }
+	  }
+  });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/item');
 });
