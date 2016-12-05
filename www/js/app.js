@@ -52,18 +52,18 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     }
   })
 
-  .state('app.single', {
+  .state('app.tabbed', {
       url: '/tabbed',
 	  abstract: true,
       views: {
         'menuContent': {
-          templateUrl: 'app/TabbedItem/tabbedItemView.html'//,
-//          controller: 'TabbedItemCtrl'
+          templateUrl: 'app/TabbedItem/tabbedItemView.html',
+          controller: 'TabbedItemCtrl'
         }
       }
   })
 
-  .state('app.single.item', {
+  .state('app.tabbed.item', {
     url: '/item',
     views: {
       'tab-item': {
@@ -73,7 +73,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     }
   })
 
-  .state('app.single.list', {
+  .state('app.tabbed.list', {
     url: '/list',
     views: {
       'tab-list': {
@@ -83,15 +83,25 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     }
   })
 
-  .state('app.single.tabs', {
-    url: '/tab3',
-    views: {
-      'tab-tabs': {
-        templateUrl: 'templates/tab3.html',
-        controller: 'TabThreeCtrl'
-      }
-    }
+  .state('app.child', {
+	  url: '/child',
+	  views: {
+		  'menuContent': {
+			  templateUrl: 'app/Child/childView.html',
+			  controller: 'ChildCtrl'
+		  }
+	  }
   })
+
+//  .state('app.tabbed.tabs', {
+//    url: '/tab3',
+//    views: {
+//      'tab-tabs': {
+//        templateUrl: 'templates/tab3.html',
+//        controller: 'TabThreeCtrl'
+//      }
+//    }
+//  })
 		 
   .state('app.search', {
     url: '/search',

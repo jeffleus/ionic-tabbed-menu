@@ -1,16 +1,19 @@
-var ctrl = 'TabbedItem';
+(function() {
+'use strict';
 
+var ctrl = 'TabbedItemCtrl';
 angular.module('starter.controllers')
 
 .controller(ctrl, function($scope, $log) {
 	$scope.vm = {
-		message: 'This is a list view reached from the menu.'
+		message: 'This is an abstract TabbedItem controller from the menu.'
 	};
 	
 	$scope.$on('$ionicView.enter', function() {
-		$log.info(ctrl + '_enter');
+//		$log.info(ctrl + '_enter');
 	});
 	$scope.$on('$ionicView.leave', function() {
-		$log.info(ctrl + '_leave');
+//		$log.info(ctrl + '_leave');
 	});
 });
+})();
