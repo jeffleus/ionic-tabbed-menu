@@ -4,16 +4,20 @@
 var ctrl = 'ItemCtrl';
 angular.module('starter.controllers')
 
-.controller(ctrl, function($scope, $log) {
+.controller(ctrl, function($scope, logger) {
 	$scope.vm = {
 		message: 'This is a single item view reached from the menu.'
 	};
 	
 	$scope.$on('$ionicView.enter', function() {
-		$log.info(ctrl + '_enter');
+		logger.info(ctrl + '_enter');
 	});
 	$scope.$on('$ionicView.leave', function() {
-		$log.info(ctrl + '_leave');
+		logger.info(ctrl + '_leave');
 	});
+    
+    $scope.showToast = function(msg) {
+        logger.error(msg);
+    }
 });
 })();
